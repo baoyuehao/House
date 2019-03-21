@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.PictureMapperCustom">
+  <!--查询age条件的用户-->
+  <select id="queryPicURIsByHouses" resultType="com.example.demo.pojo.Picture" parameterType="java.util.HashMap">
+    select
+      *
+      FROM picture
+      WHERE picture.phid=#{hid}
+  </select>
+
+</mapper>

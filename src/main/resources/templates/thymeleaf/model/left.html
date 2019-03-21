@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--suppress ALL-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="myleft">
+    <meta charset="UTF-8" />
+    <title>demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body >
+<!-- SIDE MENU -->
+<div id="skin-select">
+    <div id="logo">
+        <h1>House智能系统</h1>
+    </div>
+
+    <a id="toggle">
+        <span class="entypo-menu"></span>
+    </a>
+    <div class="dark">
+        <form action="#">
+                <span>
+                    <input type="text" name="search" value="" class="search rounded id_search" placeholder="快速检索..." autofocus="">
+                </span>
+        </form>
+    </div>
+
+    <div class="search-hover">
+        <form id="demo-2">
+            <input type="search" placeholder="快速检索..." class="id_search">
+        </form>
+    </div>
+
+    <div class="skin-part">
+        <div id="tree-wrap">
+            <div class="side-bar">
+                <ul class="topnav menu-left-nest">
+
+                    <li>
+                        <a href="#" style="border-left:0px solid!important;" class="title-menu-left">
+
+                            <span class="">House系统管理</span>
+                            <i data-toggle="tooltip" class="entypo-cog pull-right config-wrap"></i>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a class="tooltip-tip ajax-load" href="index" title="首页">
+                            <i class="icon-home"></i>
+                            <span>首页</span>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a class="tooltip-tip ajax-load" href="ivm" title="房屋信息管理">
+                            <i class="icon-view-thumb"></i>
+                            <span>房屋信息管理</span>
+                            <div class="noft-purple-number" style="background-color: #00ACED;"><%=ivmcount%></div>
+                        </a>
+                    </li>
+
+
+                </ul>
+
+
+                <ul class="topnav menu-left-nest">
+                    <li>
+                        <a href="#" style="border-left:0px solid!important;" class="title-menu-left">
+
+                            <span class="">用户管理</span>
+                            <i data-toggle="tooltip" class="entypo-cog pull-right config-wrap"></i>
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="tooltip-tip ajax-load" href="usermanage" title="账号管理">
+                            <i class="entypo-users"></i>
+                            <span>账号管理</span>
+
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="tooltip-tip ajax-load" href="#" title="帮助中心">
+                            <i class="fontawesome-question-sign"></i>
+                            <span>帮助中心</span>
+
+                        </a>
+                    </li>
+
+
+
+
+                </ul>
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END OF SIDE MENU -->
+</body>
+</html>

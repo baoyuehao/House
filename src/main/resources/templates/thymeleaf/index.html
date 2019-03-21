@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--suppress ALL-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script th:src="@{/static/js/jquery.min.js}"></script>
+<script th:src="@{/static/js/bootstrap.js}"></script>
+<script th:src="@{/static/js/html5.js}"></script>
+<link th:src="@{/static/css/bootstrap.css}"/>
+<body>
+    <h2 th:text="${girlProperties.age}">wait</h2>
+    <h2 th:text="${#dates.format(girlProperties.date,'yyyy-MM-dd HH:mm:ss')}"></h2>
+    <h2 th:text="${girlProperties.content}"></h2>
+    <h2 th:utext="${girlProperties.content}"></h2>
+    <a th:href="@{http://www.baidu.com}" target="_blank">超链接</a>
+<form th:action="@{/ty/login}" method="post" th:object="${user}" th:method="post">
+    <input type="text" th:field="*{uname}"/>
+    <input type="submit" value="提交"/>
+</form>
+<div th:if="${user.role == 0}">0</div>
+<div th:if="${user.role gt 0}">大于0</div>
+<div th:if="${user.role lt 0}">小于0</div>
+<div th:if="${user.role ge 0}">大于等于0</div>
+<div th:if="${user.role le 0}">小于等于0</div>
+<div th:if="${user.role != 0}">不等于0</div>
+
+<select>
+    <option>请选择</option>
+    <option th:selected="${user.uname eq 'user'}">user</option>
+    <option th:selected="${user.uname eq 'root'}">root</option>
+</select>
+
+<table class="table table-hover">
+    <tr>
+        <td>id</td>
+        <td>uname</td>
+        <td>pwd</td>
+        <td>role</td>
+    </tr>
+    <tr th:each="one:${userList}">
+        <td th:text="${one.uid}">wait</td>
+        <td th:text="${one.uname}">wait</td>
+        <td th:text="${one.pwd}">wait</td>
+        <td th:text="${one.role}">wait</td>
+    </tr>
+</table>
+<div th:switch="${user.uname}">
+    <h2 th:case="'user'">user</h2>
+    <h2 th:case="'root'">root</h2>
+    <h2 th:case="*">else</h2>
+</div>
+
+
+    <!--<div class="panel panel-default gray-bg">-->
+       <!---->
+        <!--<div class="panel-body">-->
+           <!---->
+            <!--<div id="tabsContent" class="tab-content">-->
+                <!--<div th:each="plan, status : ${listPlan}"-->
+                     <!--class="tab-pane fade"-->
+                     <!--th:classappend="${status.first} ? 'in active'"-->
+                     <!--th:id="${plan}">-->
+                    <!--<table th:each="message : ${planMessage[status.index]}">-->
+                        <!--<tr th:each="plans : ${message}">-->
+                            <!--<td th:text="${plans.courseName}"></td>-->
+                            <!--<td th:text="${plans.coursePeriod}"></td>-->
+                            <!--<td th:text="${plans.courseTerm}"></td>-->
+                        <!--</tr>-->
+                    <!--</table>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+
+
+</body>
+</html>

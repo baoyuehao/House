@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<!--suppress ALL-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+error...
+<h2 th:text="${exception}">exception</h2>
+<h2 th:text="${url}">url</h2>
+<h2 th:text="${#dates.format(timestamp,'yyyy-MM-dd hh:mm:ss')}">time</h2>
+</body>
+</html>

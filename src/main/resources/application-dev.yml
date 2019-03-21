@@ -1,0 +1,122 @@
+server:
+  #端口号
+  port: 80
+  #访问地址/域名
+  #address: 127.0.0.1
+  #请求超时:60分钟
+  session-timeout: 60
+  #错误页面
+#  error:
+#    path: /error
+  tomcat:
+    #tomcat最大线程数，默认200
+    max-threads: 250
+    #tomcat编码格式
+    uri-encoding: UTF-8
+    #tomcat日志路径
+    basedir: /home/suredata/log
+    accesslog:
+      buffered: true
+      directory: /access_log
+      enabled: true
+      file-date-format: yyyy-MM-dd
+      pattern: common
+      prefix: demo_log
+      rename-on-rotate: false
+      request-attributes-enabled: false
+      rotate: true
+      suffix: .log
+
+html5:
+  title: springboot demo
+  author: author_byh
+  content: "主题: ${html5.title},作者: ${html5.author}"
+  time: 2018-09-19
+  safeid: xxxxxxxxxxxxxxx
+
+
+spring:
+  mvc:
+    #配置静态资源路径
+    static-path-pattern: /static/**
+  #配置数据源
+  datasource:
+    url: jdbc:mysql://localhost:3306/house
+    username: root
+    password: sd1110gfc
+    driver-class-name: com.mysql.jdbc.Driver
+    druid:
+      initial-size: 10
+      min-idle: 5
+      max-active: 1000
+      test-on-borrow: true
+
+  #配置redis缓存数据库
+  redis:
+    database: 0
+    host: 127.0.0.1
+    port: 6379
+    password:
+    timeout: 1000
+    pool:
+      max-active: 1000
+      max-wait: -1
+      max-idle: 10
+      min-idle: 2
+
+
+  #配置freemarker
+  freemarker:
+    #配置ftl路径
+    template-loader-path: classpath:/templates
+    #关闭缓存，及时刷新
+    cache: true
+    #编码
+    charset: UTF-8
+    check-template-location: true
+    content-type: text/html
+    expose-request-attributes: true
+    expose-session-attributes: true
+    request-context-attribute: request
+    suffix: .ftl
+  #配置thymeleaf
+  thymeleaf:
+    prefix: classpath:/templates
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    #热部署开关
+    cache: true
+
+#配置mybatis
+mybatis:
+  type-aliases-package: com.example.demo.pojo
+  mapper-locations: classpath:mapper/*.xml
+#通用mapper配置
+mapper:
+  mappers: com.example.demo.utils.MyMapper
+  not-empty: false
+  identity: MYSQL
+#分页插件配置
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+#为mybatis设置，生产可删除
+#restart:
+#  include:
+#    mapper: /mapper-[\\w-\\.]+jar
+#    pagehelper: /pagehelper-[\\w-\\.]+jar
+
+
+
+
+
+
+
+
+
+

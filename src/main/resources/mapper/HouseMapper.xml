@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.mapper.HouseMapper">
+  <resultMap id="BaseResultMap" type="com.example.demo.pojo.House">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="hid" jdbcType="INTEGER" property="hid" />
+    <result column="htype" jdbcType="VARCHAR" property="htype" />
+    <result column="hlevel" jdbcType="INTEGER" property="hlevel" />
+    <result column="hsize" jdbcType="DOUBLE" property="hsize" />
+    <result column="hage" jdbcType="VARCHAR" property="hage" />
+    <result column="hpaint" jdbcType="VARCHAR" property="hpaint" />
+    <result column="hsource" jdbcType="VARCHAR" property="hsource" />
+    <result column="hcreatetime" jdbcType="TIMESTAMP" property="hcreatetime" />
+    <result column="hlastupdatetime" jdbcType="TIMESTAMP" property="hlastupdatetime" />
+    <result column="hlowestprice" jdbcType="DOUBLE" property="hlowestprice" />
+    <result column="hhighestprice" jdbcType="DOUBLE" property="hhighestprice" />
+    <result column="howner" jdbcType="INTEGER" property="howner" />
+    <result column="huid" jdbcType="INTEGER" property="huid" />
+    <result column="htitle" jdbcType="LONGVARCHAR" property="htitle" />
+    <result column="hvillage" jdbcType="LONGVARCHAR" property="hvillage" />
+    <result column="hstep" jdbcType="LONGVARCHAR" property="hstep" />
+    <result column="hquality" jdbcType="LONGVARCHAR" property="hquality" />
+    <result column="hdescribe" jdbcType="LONGVARCHAR" property="hdescribe" />
+  </resultMap>
+
+
+
+</mapper>

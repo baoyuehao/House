@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--suppress ALL-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<!-- 引用公共头部标签信息 -->
+<head th:include="/thymeleaf/model/header :: myheader">
+</head>
+<body>
+
+<img src="/static/imgs/test2.jpg" th:src="@{/static/imgs/test2.jpg}" class="img-circle">
+
+<a href="https://www.baidu.com" th:href="@{/user/users}" target="_blank">超链接</a>
+
+<form th:action="@{/ty/login}" method="post" th:object="${user}" th:method="post">
+    <input type="text" th:field="*{name}"/>
+    <input type="submit" value="提交"/>
+</form>
+
+<div th:if="${user.age == 0}">0</div>
+<div th:if="${user.age gt 0}">大于0</div>
+<div th:if="${user.age lt 0}">小于0</div>
+<div th:if="${user.age ge 0}">大于等于0</div>
+<div th:if="${user.age le 0}">小于等于0</div>
+<div th:if="${user.age != 0}">不等于0</div>
+
+<select>
+    <option>请选择</option>
+    <option th:selected="${user.name eq 'user'}">user</option>
+    <option th:selected="${user.name eq 'root'}">root</option>
+</select>
+
+
+<table class="table table-hover table-striped">
+    <tr>
+        <td>id</td>
+        <td>uname</td>
+        <td>pwd</td>
+        <td>role</td>
+    </tr>
+    <tr th:each="one:${users}">
+        <td th:text="${one.userid}">wait</td>
+        <td th:text="${one.name}">wait</td>
+        <td th:text="${one.password}">wait</td>
+        <td th:text="${one.age}">wait</td>
+    </tr>
+</table>
+
+<div th:switch="${user.name}">
+    <h2 th:case="'user'">user</h2>
+    <h2 th:case="'root'">root</h2>
+    <h2 th:case="*">else</h2>
+</div>
+
+</body>
+
+
+</html>
